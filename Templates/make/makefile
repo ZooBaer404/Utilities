@@ -1,7 +1,7 @@
 CC = gcc
 DEBUG = -Wall -g -pg -fprofile-arcs -ftest-coverage -O0
 RELEASE = -O2
-SOURCES = main.c
+SOURCES = main.c test/*.c benchmark/*.c
 INCLUDE = -Iinclude
 EDITOR = vi
 EXE = main.out
