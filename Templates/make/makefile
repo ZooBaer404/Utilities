@@ -13,7 +13,7 @@ release: compile_release
 	./build/main.out
 	@echo "Done."
 
-all: compile debug profile check coverage
+all: compile debug profile check coverage syscalls
 
 debug: compile
 	@echo "Running debugger..."
@@ -23,6 +23,14 @@ debug: compile
 run: compile
 	@echo "Running program..."
 	./build/$(EXE)
+
+syscalls: compile
+	@echo "Running strace to show system calls..."
+	strace build/$(EXE)
+
+libcalls: compile
+	@echo "Running ltrace to show library calls..."
+	ltrace build/$(EXE)
 
 profile:
 	@echo "Profiling the program..."
