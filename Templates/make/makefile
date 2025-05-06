@@ -14,7 +14,7 @@ COMPILE = $(LIB) $(DLL) $(INCLUDE) -o $(EXE) $(SOURCES) $(INCLUDE)
 
 
 # compilation-related
-DEBUG = -O0 -DDEBUG -g -march=native -mtune=native -fstack-protector-strong -Wall -Wextra -pedantic -Werror -Wpointer-arith -Wcast-align -Wconversion -Wsign-conversion -Wunused -Wunused-parameter -Wstrict-prototypes -Wshadow -Wfloat-equal -Winline -Wundef -fanalyzer -fsanitize=address,undefined
+DEBUG = -O0 -DDEBUG -g -march=native -mtune=native -fstack-protector-strong -Wall -Wextra -pedantic -Wpointer-arith -Wcast-align -Wconversion -Wsign-conversion -Wunused -Wunused-parameter -Wstrict-prototypes -Wshadow -Wfloat-equal -Winline -Wundef -fanalyzer -fsanitize=address,undefined
 DEBUG_CLANG = $(DEBUG),memory
 PROFILE = -O2 -pg -fno-omit-frame-pointer -g
 COVERAGE = -O0 -fprofile-arcs -ftest-coverage -g
