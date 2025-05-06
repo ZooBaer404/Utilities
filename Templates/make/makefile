@@ -23,7 +23,7 @@ RELEASE = -O2 -march=native -mtune=native -DNDEBUG -Wall -Wextra -Wno-unused-par
 
 release: compile_release strip
 	@echo "Running program..."
-	./build/main.out
+	$(EXE)
 	@echo "Done."
 
 all: compile debug profile valgrind coverage syscalls
@@ -88,7 +88,7 @@ profile:
 	@echo "Done."
 	@echo "Profiling the program..."
 	@echo "gprof uses 'gmon.out'!"
-	gprof build/$(EXE) > profile
+	gprof $(EXE) > profile
 	@echo "Viewing profiling results..."
 	$(EDITOR) profile
 	@echo "Done."
@@ -113,7 +113,7 @@ pre_coverage:
 ifneq ($(FILE),)
 	@echo "Running code coverage analysis..."
 	@echo "gcov uses the 'file.gcda'!"
-	gcov build/$(EXE)-$(FILE).gcda > build/$(FILE)-line_coverage
+	gcov $(EXE)-$(FILE).gcda > build/$(FILE)-line_coverage
 	@echo "Done."
 	@echo "Viewing no of lines run results..."
 	$(EDITOR) build/$(FILE)-line_coverage
