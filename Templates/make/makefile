@@ -14,8 +14,9 @@ COMPILE = $(LIB) $(DLL) $(INCLUDE) -o $(EXE) $(SOURCES) $(INCLUDE)
 
 
 # compilation-related
-DEBUG = -O0 -DDEBUG -g -march=native -mtune=native -fstack-protector-strong -Wall -Wextra -pedantic -Wpointer-arith -Wcast-align -Wconversion -Wsign-conversion -Wunused -Wunused-parameter -Wstrict-prototypes -Wshadow -Wfloat-equal -Winline -Wundef -fanalyzer -fsanitize=address,undefined
-DEBUG_CLANG = $(DEBUG),memory
+DEBUG = -O0 -DDEBUG -g -march=native -mtune=native -fstack-protector-strong -Wall -Wextra -pedantic -Wpointer-arith -Wcast-align -Wconversion -Wsign-conversion -Wunused -Wunused-parameter -Wstrict-prototypes -Wshadow -Wfloat-equal -Winline -Wundef
+SANITIZE = -fanalyzer -fsanitize=address,undefined
+SANITIZE_CLANG = $(DEBUG),memory
 PROFILE = -O2 -pg -fno-omit-frame-pointer -g
 COVERAGE = -O0 -fprofile-arcs -ftest-coverage -g
 RELEASE = -O2 -march=native -mtune=native -DNDEBUG -Wall -Wextra -Wno-unused-parameter -fstack-protector-strong
@@ -26,7 +27,7 @@ release: compile_release strip
 	$(EXE)
 	@echo "Done."
 
-all: compile debug profile valgrind coverage syscalls
+all: compile debug profile valgrind coverage syscalls libcalls objdump strings readelf disassembly hex
 
 debug: compile
 	@echo "Running debugger..."
@@ -79,7 +80,7 @@ disassembly: compile
 hex: compile
 	$(HEX) $(EXE)
 
-profile:
+profile: $(SOURCES)
 	@echo "Compiling for profiling..."
 	$(CC) $(COMPILE) $(PROFILE)
 	@echo "Done."
@@ -102,7 +103,7 @@ else
 endif
 	@echo "FILE must follow this pattern '*.c.cov'"
 
-pre_coverage:
+pre_coverage: $(SOURCES)
 	@echo "Compiling for coverage..."
 	$(CC) $(COMPILE) $(COVERAGE)
 	@echo "Done."
@@ -126,6 +127,16 @@ endif
 valgrind: compile
 	@echo "Running with Valgrind for memory with checks..."
 	valgrind --vgdb=yes $(EXE)
+	@echo "Done."
+
+sanitize: $(SOURCES)
+	@echo "Compiling with sanitization on..."
+	$(CC) $(COMPILE) $(SANITIZE)
+	@echo "Done."
+
+sanitize_clang: $(SOURCES)
+	@echo "Compiling with sanitization on..."
+	clang $(COMPILE) $(SANITIZE)
 	@echo "Done."
 
 compile: $(SOURCES)
