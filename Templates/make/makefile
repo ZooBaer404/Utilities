@@ -1,38 +1,91 @@
+# Adjust for compilation
 CC = gcc
-DEBUG = -Wall -g -pg -fprofile-arcs -ftest-coverage -O0
-RELEASE = -O2
+DEBUGGER = gdb
+HEX = bless
+
 SOURCES = main.c test/*.c benchmark/*.c
 INCLUDE = -Iinclude
 EDITOR = vi
-EXE = main.out
 LIB =
 DLL =
 
-release: compile_release
+EXE = build/main.out
+COMPILE = $(LIB) $(DLL) $(INCLUDE) -o $(EXE) $(SOURCES) $(INCLUDE)
+
+
+# compilation-related
+DEBUG = -O0 -DDEBUG -g -march=native -mtune=native -fstack-protector-strong -Wall -Wextra -pedantic -Werror -Wpointer-arith -Wcast-align -Wconversion -Wsign-conversion -Wunused -Wunused-parameter -Wstrict-prototypes -Wshadow -Wfloat-equal -Winline -Wundef -fanalyzer -fsanitize=address,undefined
+DEBUG_CLANG = $(DEBUG),memory
+PROFILE = -O2 -pg -fno-omit-frame-pointer -g
+COVERAGE = -O0 -fprofile-arcs -ftest-coverage -g
+RELEASE = -O2 -march=native -mtune=native -DNDEBUG -Wall -Wextra -Wno-unused-parameter -fstack-protector-strong
+
+
+release: compile_release strip
 	@echo "Running program..."
 	./build/main.out
 	@echo "Done."
 
-all: compile debug profile check coverage syscalls
+all: compile debug profile valgrind coverage syscalls
 
 debug: compile
 	@echo "Running debugger..."
-	gdb build/$(EXE)
+	$(DEBUGGER) $(EXE)
 	@echo "DONE."
 
 run: compile
 	@echo "Running program..."
-	./build/$(EXE)
+	./$(EXE)
 
 syscalls: compile
 	@echo "Running strace to show system calls..."
-	strace build/$(EXE)
+	strace $(EXE)
 
 libcalls: compile
 	@echo "Running ltrace to show library calls..."
-	ltrace build/$(EXE)
+	ltrace $(EXE)
+
+strings: compile
+	@echo "Listing strings in the executable..."
+	strings $(EXE)
+	@echo "Done."
+
+readelf: compile
+	@echo "Printing the symbol table..."
+	readelf --symbols $(EXE)
+	@echo "Done."
+	@echo "Printing segments..."
+	readelf --segments $(EXE)
+	@echo "Done."
+
+strip: compile
+	@echo "Stripping the binary of symbols..."
+	strip $(EXE)
+	@echo "Done."
+
+objdump: compile
+	@echo "Printing the symbol table..."
+	objdump -t $(EXE)
+	@echo "Done."
+	@echo "Printing sections..."
+	objdump -s $(EXE)
+	@echo "Done."
+
+disassembly: compile
+	@echo "Prining disassembly..."
+	objdump -d $(EXE)
+	@echo "Done."
+
+hex: compile
+	$(HEX) $(EXE)
 
 profile:
+	@echo "Compiling for profiling..."
+	$(CC) $(COMPILE) $(PROFILE)
+	@echo "Done."
+	@echo "Running program..."
+	./$(EXE)
+	@echo "Done."
 	@echo "Profiling the program..."
 	@echo "gprof uses 'gmon.out'!"
 	gprof build/$(EXE) > profile
@@ -50,6 +103,13 @@ endif
 	@echo "FILE must follow this pattern '*.c.cov'"
 
 pre_coverage:
+	@echo "Compiling for coverage..."
+	$(CC) $(COMPILE) $(COVERAGE)
+	@echo "Done."
+	@echo "Running program..."
+	./$(EXE)
+	@echo "Done."
+
 ifneq ($(FILE),)
 	@echo "Running code coverage analysis..."
 	@echo "gcov uses the 'file.gcda'!"
@@ -63,20 +123,24 @@ else
 	@echo "FILE must follow this pattern 'file' without the .c extension"
 endif
 
-
-check: compile
+valgrind: compile
 	@echo "Running with Valgrind for memory with checks..."
-	valgrind --vgdb=yes build/main.out
+	valgrind --vgdb=yes $(EXE)
 	@echo "Done."
 
 compile: $(SOURCES)
 	@echo "Compiling for debugging..."
-	$(CC) $(DEBUG) $(LIB) $(DLL) $(INCLUDE) -o build/main.out $(SOURCES) $(INCLUDE)
+	$(CC) $(COMPILE) $(DEBUG)
+	@echo "Done."
+
+compile_clang: $(SOURCES)
+	@echo "Compiling for debugging using clang..."
+	clang $(COMPILE_CLANG) $(DEBUG_CLANG)
 	@echo "Done."
 
 compile_release: $(SOURCES)
 	@echo "Compiling for release..."
-	$(CC) $(RELEASE) $(INCLUDE)  -o build/main.out $(SOURCES)
+	$(CC) $(COMPILE) $(RELEASE)
 	@echo "Done."
 
 clean:
