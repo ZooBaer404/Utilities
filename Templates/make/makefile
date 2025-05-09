@@ -36,7 +36,7 @@ all: compile debug profile valgrind coverage syscalls libcalls objdump strings r
 # TODO: add support for temporary redirection of input
 debug: compile
 	@echo "Running debugger..."
-	cat "set args $(ARGS)\n" | $(DEBUGGER) $(EXE)
+	echo "set args $(ARGS)\n" | $(DEBUGGER) $(EXE)
 	@echo "DONE."
 
 run: compile
