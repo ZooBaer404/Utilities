@@ -33,10 +33,9 @@ release: compile_release strip
 	$(EXE) $(ARGS)
 	@echo "Done."
 
-# TODO: Don't worry if (gdb) prompt is outputted twice (it's normal)
 debug: compile
 	@echo "Running debugger..."
-	cat <(echo "set args $(ARGS)\n") - | $(DEBUGGER) $(EXE)
+	$(DEBUGGER) $(EXE)
 	@echo "DONE."
 
 run: compile
