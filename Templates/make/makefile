@@ -26,17 +26,17 @@ COVERAGE = -O0 -fprofile-arcs -ftest-coverage -g
 RELEASE = -O2 -march=native -mtune=native -DNDEBUG -Wall -Wextra -Wno-unused-parameter -fstack-protector-strong
 
 
+all: compile debug profile valgrind coverage syscalls libcalls objdump strings readelf disassembly hex
+
 release: compile_release strip
 	@echo "Running program..."
 	$(EXE) $(ARGS)
 	@echo "Done."
 
-all: compile debug profile valgrind coverage syscalls libcalls objdump strings readelf disassembly hex
-
-# TODO: add support for temporary redirection of input
+# TODO: Don't worry if (gdb) prompt is outputted twice (it's normal)
 debug: compile
 	@echo "Running debugger..."
-	echo "set args $(ARGS)\n" | $(DEBUGGER) $(EXE)
+	cat <(echo "set args $(ARGS)\n") - | $(DEBUGGER) $(EXE)
 	@echo "DONE."
 
 run: compile
