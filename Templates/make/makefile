@@ -6,6 +6,7 @@ HEX = bless
 # TODO: Remember to prepend the file with 'build/'!!!
 ARGS =
 
+# TODO: The file written before should depend of the file after it!!!
 SOURCES = main.c test/*.c benchmark/*.c
 INCLUDE = -Iinclude
 EDITOR = vi
