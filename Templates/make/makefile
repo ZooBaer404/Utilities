@@ -3,6 +3,9 @@ CC = gcc
 DEBUGGER = gdb
 HEX = bless
 
+# TODO: Remember to prepend the file with 'build/'!!!
+ARGS =
+
 SOURCES = main.c test/*.c benchmark/*.c
 INCLUDE = -Iinclude
 EDITOR = vi
@@ -24,11 +27,12 @@ RELEASE = -O2 -march=native -mtune=native -DNDEBUG -Wall -Wextra -Wno-unused-par
 
 release: compile_release strip
 	@echo "Running program..."
-	$(EXE)
+	$(EXE) $(ARGS)
 	@echo "Done."
 
 all: compile debug profile valgrind coverage syscalls libcalls objdump strings readelf disassembly hex
 
+# TODO: add support for temporary redirection of input
 debug: compile
 	@echo "Running debugger..."
 	$(DEBUGGER) $(EXE)
@@ -36,15 +40,15 @@ debug: compile
 
 run: compile
 	@echo "Running program..."
-	./$(EXE)
+	./$(EXE) $(ARGS)
 
 syscalls: compile
 	@echo "Running strace to show system calls..."
-	strace $(EXE)
+	strace $(EXE) $(ARGS)
 
 libcalls: compile
 	@echo "Running ltrace to show library calls..."
-	ltrace $(EXE)
+	ltrace $(EXE) $(ARGS)
 
 strings: compile
 	@echo "Listing strings in the executable..."
@@ -85,7 +89,7 @@ profile: $(SOURCES)
 	$(CC) $(COMPILE) $(PROFILE)
 	@echo "Done."
 	@echo "Running program..."
-	./$(EXE)
+	./$(EXE) $(ARGS)
 	@echo "Done."
 	@echo "Profiling the program..."
 	@echo "gprof uses 'gmon.out'!"
@@ -108,7 +112,7 @@ pre_coverage: $(SOURCES)
 	$(CC) $(COMPILE) $(COVERAGE)
 	@echo "Done."
 	@echo "Running program..."
-	./$(EXE)
+	./$(EXE) $(ARGS)
 	@echo "Done."
 
 ifneq ($(FILE),)
@@ -126,7 +130,7 @@ endif
 
 valgrind: compile
 	@echo "Running with Valgrind for memory with checks..."
-	valgrind --vgdb=yes $(EXE)
+	valgrind -s --vgdb=yes $(EXE) $(ARGS)
 	@echo "Done."
 
 sanitize: $(SOURCES)
