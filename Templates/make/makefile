@@ -143,19 +143,20 @@ sanitize_clang: $(SOURCES)
 	clang $(COMPILE) $(SANITIZE)
 	@echo "Done."
 
+# $(ADD) can be used while using the make command in terminal
 compile: $(SOURCES)
 	@echo "Compiling for debugging..."
-	$(CC) $(COMPILE) $(DEBUG)
+	$(CC) $(COMPILE) $(DEBUG) $(ADD)
 	@echo "Done."
 
 compile_clang: $(SOURCES)
 	@echo "Compiling for debugging using clang..."
-	clang $(COMPILE_CLANG) $(DEBUG_CLANG)
+	clang $(COMPILE_CLANG) $(DEBUG_CLANG) $(ADD)
 	@echo "Done."
 
 compile_release: $(SOURCES)
 	@echo "Compiling for release..."
-	$(CC) $(COMPILE) $(RELEASE)
+	$(CC) $(COMPILE) $(RELEASE) $(ADD)
 	@echo "Done."
 
 clean:
