@@ -1,3 +1,4 @@
+Standard = C99
 BasedOnStyle:  LLVM
 IndentWidth:   8
 UseTab:        Always
@@ -5,4 +6,3 @@ TabWidth:      8
 BreakBeforeBraces: Attach
 AllowShortIfStatementsOnASingleLine: false
 ColumnLimit: 80
-

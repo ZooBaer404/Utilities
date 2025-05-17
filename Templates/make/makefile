@@ -159,6 +159,8 @@ compile_release: $(SOURCES)
 	$(CC) $(COMPILE) $(RELEASE) $(ADD)
 	@echo "Done."
 
+install:
+
 clean:
 	@echo "Cleaning obj directory..."
 	rm -rf obj/*
