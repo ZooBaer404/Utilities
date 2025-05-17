@@ -36,6 +36,18 @@ You need to have these tools installed
 - Profiler (gprof)
 - Coverage Testing (gcov)
 
+---
+
+## How to use
+
+* ```bash make release```
+* ```bash make debug```
+* ```bash make valgrind```
+
+
+
+
+
 ### To summarize
 
 ```bash
