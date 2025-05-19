@@ -1,4 +1,4 @@
-Standard = C99
+Standard: C89
 BasedOnStyle:  LLVM
 IndentWidth:   8
 UseTab:        Always
