@@ -21,9 +21,9 @@ Each doc shows an estimated update frequency so you know when to dust it off aga
 
 ## Status Legend
 
-[x] Completed & up-to-date  
-[ ] Needs review or completion  
-[~] Under revision or partial  
+- [x] Completed & up-to-date  
+- [ ] Needs review or completion  
+- [~] Under revision or partial  
 
 ---
 
