@@ -58,7 +58,7 @@ Each doc shows an estimated update frequency so you know when to dust it off aga
    _Update frequency:_ Quarterly or before resource-heavy phases.
    
 8. [ ] **Stack** ([stack.md](../stack.md))
-   _Purpose:_ Outline the tech you’re committing to (and will later regret).
+   _Purpose:_ Outline the tech you’re committing to (and will later regret).  
    _Update frequency:_ Once per project unless you rewrite it all.
 
 9. [ ] **Configuration Management** ([configuration-management.md](configuration-management.md))  
