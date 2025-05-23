@@ -29,71 +29,71 @@ Each doc shows an estimated update frequency so you know when to dust it off aga
 
 ## Sequential Project Management Docs
 
-1. [ ] **Product Vision** ([](product-vision.md))  
+1. [ ] **Product Vision** ([product-vision.md](product-vision.md))  
    _Purpose:_ Define the project's purpose, objectives, and key stakeholders.  
    _Update frequency:_ On major scope changes or kickoff.
 
-2. [ ] **Feasibility Study** ([](feasibility-study.md))  
+2. [ ] **Feasibility Study** ([feasibility-study.md](feasibility-study.md))  
    _Purpose:_ Evaluate if the project is worth your sanity & resources.  
    _Update frequency:_ Before project approval, revisit if assumptions change.
 
-3. [ ] **Estimation** ([](estimation.md))  
+3. [ ] **Estimation** ([estimation.md](estimation.md))  
    _Purpose:_ Rough guess of cost, time, and resource needs.  
    _Update frequency:_ After feasibility, update before each major phase.
 
-4. [ ] **Risk Management** ([](risk-management.md)) & **Risk Register** ([](risk-register.md))  
+4. [ ] **Risk Management** ([risk-management.md](risk-management.md)) & **Risk Register** ([risk-register.md](risk-register.md))  
    _Purpose:_ Spot what could explode and prepare the fire extinguisher.  
    _Update frequency:_ Monthly or after risk events.
 
-5. [ ] **Roles and Assignees** ([](roles-and-assignees.md))  
+5. [ ] **Roles and Assignees** ([roles-and-assignees.md](roles-and-assignees.md))  
    _Purpose:_ Who’s playing what part on this chaos orchestra?  
    _Update frequency:_ With team changes or new hires.
 
-6. [ ] **Stakeholders** ([](stakeholders.md))  
+6. [ ] **Stakeholders** ([stackholders.md](stakeholders.md))  
    _Purpose:_ Know who to appease, bribe, or ignore.  
    _Update frequency:_ Project start and major stakeholder changes.
 
-7. [ ] **Resource Management** ([](resource-management.md))  
+7. [ ] **Resource Management** ([resource-management.md](resource-management.md))  
    _Purpose:_ What people, tools, and caffeine do you need?  
    _Update frequency:_ Quarterly or before resource-heavy phases.
    
-8. [ ] **Stack** ([](../stack.md))
+8. [ ] **Stack** ([stack.md](../stack.md))
    _Purpose:_ Outline the tech you’re committing to (and will later regret).
    _Update frequency:_ Once per project unless you rewrite it all.
 
-9. [ ] **Configuration Management** ([](configuration-management.md))  
+9. [ ] **Configuration Management** ([configuration-management.md](configuration-management.md))  
    _Purpose:_ Keep your code, docs, and environments in line.  
    _Update frequency:_ Whenever new tools or environments are added.
 
-10. [ ] **Design Decision** ([](design-decision.md))  
+10. [ ] **Design Decision** ([design-decision.md](design-decision.md))  
    _Purpose:_ Document your “brilliant” architectural choices.  
    _Update frequency:_ With major design changes.
 
-11. [ ] **Quality Management** ([](quality-management.md))  
+11. [ ] **Quality Management** ([quality-management.md](quality-management.md))  
     _Purpose:_ Define standards so your code isn’t a dumpster fire.  
     _Update frequency:_ At project start and after quality audits.
 
-12. [ ] **Monitoring and Control** ([](monitoring-control.md))  
+12. [ ] **Monitoring and Control** ([monitoring-control.md](monitoring-control.md))  
     _Purpose:_ Keep tabs on progress before it derails.  
     _Update frequency:_ Weekly or sprint-end.
 
-13. [ ] **Meetings** ([](meetings.md))  
+13. [ ] **Meetings** ([meetings.md](meetings.md))  
     _Purpose:_ Document the endless circle of “discussions.”  
     _Update frequency:_ After each meeting.
 
-14. [ ] **Milestones** ([](milestones.md))  
+14. [ ] **Milestones** ([milestones.md](milestones.md))  
     _Purpose:_ Celebrate small wins so motivation survives.  
     _Update frequency:_ After each milestone achieved or updated.
 
-15. [ ] **Deployment** ([](deployment.md)), **Environment Configuration** ([](env-config.md)), & **Operations** ([](operations.md))  
+15. [ ] **Deployment** ([deployment.md](deployment.md)), **Environment Configuration** ([env-config.md](env-config.md)), & **Operations** ([operations.md](operations.md))  
     _Purpose:_ How to ship it and keep it running without burning down the server.  
     _Update frequency:_ Before deployment and during ops changes.
 
-16. [ ] **Process Review** ([](process-review.md))  
+16. [ ] **Process Review** ([process-review.md](process-review.md))  
     _Purpose:_ Learn from mistakes and pretend you didn’t waste months.  
     _Update frequency:_ Post-mortem after major phases or project end.
 
-17. [ ] **Closure** ([](closure.md))  
+17. [ ] **Closure** ([closure.md](closure.md))  
     _Purpose:_ Wrap it up and close the book on this saga.  
     _Update frequency:_ Project end.
 
