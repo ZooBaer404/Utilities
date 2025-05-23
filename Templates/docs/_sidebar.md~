@@ -1,0 +1,47 @@
+<!-- 
+START OF _sidebar.md
+
+Purpose:
+Defines the sidebar navigation structure for the documentation site.
+
+Update Frequency:
+Update this file whenever files/folders are added, removed, or reorganized.
+
+Location: /_sidebar.md
+-->
+
+# Start of _sidebar.md
+
+- 📚 **Documentation Overview**
+  - [docs/README.md](docs/README.md)
+
+- 🗂️ **Project Management**
+  - [project-management/project-management.md](project-management/project-management.md)
+  - [project-management/roles-and-assignees.md](project-management/roles-and-assignees.md)
+  - [project-management/product-vision.md](project-management/product-vision.md)
+  - [project-management/stakeholders.md](project-management/stakeholders.md)
+  - [project-management/milestones.md](project-management/milestones.md)
+  - [project-management/feasibility-study.md](project-management/feasibility-study.md)
+  - [project-management/time-breakdown.md](project-management/time-breakdown.md)
+  - [project-management/cost-estimate.md](project-management/estimation.md)
+  - [project-management/buffer.md](project-management/buffer.md)
+  - [project-management/risk-management.md](project-management/risk-management.md)
+  - [project-management/quality-management.md](project-management/quality-management.md)
+  - [project-management/monitoring-control.md](project-management/monitoring-control.md)
+  - [project-management/meetings.md](project-management/meetings.md)
+  - [project-management/review-process.md](project-management/review-process.md)
+  - [project-management/design-decision.md](project-management/design-decision.md)
+  - [project-management/configuration-management.md](project-management/configuration-management.md)
+  - [project-management/deployment.md](project-management/deployment.md)
+  - [project-management/env-config.md](project-management/env-config.md)
+  - [project-management/operations.md](project-management/operations.md)
+
+- 🧪 **Quality Assurance**
+  - [qa/test-plan.md](qa/test-plan.md)
+  - [qa/manual-tests.md](qa/manual-tests.md)
+
+- 🔌 **API Documentation**
+  - [api/openapi.yaml](api/openapi.yaml)
+  - [api/example-requests.md](api/example-requests.md)
+
+# End of _sidebar.md
