@@ -16,7 +16,7 @@ LIB =
 DLL =
 
 EXE = build/main.out
-COMPILE = -v -std=$(STD) $(LIB) $(DLL) $(INCLUDE) -o $(EXE) $(SOURCES) $(INCLUDE)
+COMPILE = -v -std=$(STD) $(LIB) $(DLL) $(INCLUDE) -o $(EXE) $(SOURCES) $(BUILTIN_SOURCES) $(INCLUDE)
 
 # Valgrind
 VALGRIND_COMMON_FLAGS = -s --track-origins=yes --vgdb=yes --verbose
