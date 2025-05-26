@@ -2,7 +2,6 @@
 
 ## Disclaimer !!!!
 
-* Each one of these files assume you have included <stdio.h> before including them.
 
 ## colors.h
 

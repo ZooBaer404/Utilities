@@ -1,4 +1,4 @@
-#ifdnef _LOGGER_H_
+#ifndef _LOGGER_H_
 #define _LOGGER_H_
 
 void error(FILE *stream, char *type, char *message);
