@@ -6,7 +6,7 @@
 void error(FILE *stream, char *type, char *message) {
     if (type == NULL || message == NULL) {
 	fprintf(stderr, RED "%s: %s", type, message);
-	fprintf(RESET"\n");
+	fprintf(stream, RESET"\n");
     }
     
     fprintf(stream, RED "%s: %s", type, message);
@@ -16,7 +16,7 @@ void error(FILE *stream, char *type, char *message) {
 void info(FILE *stream, char *type, char *message) {
     if (type == NULL || message == NULL) {
 	fprintf(stderr, RED "%s: %s", "info_out", "type or message NULL");
-	fprintf(RESET"\n");
+	fprintf(stream, RESET"\n");
     }
     
     fprintf(stream, GREEN "%s: %s", type, message);
