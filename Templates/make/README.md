@@ -17,6 +17,9 @@ A collection of tools to help you get started with writing C programs easily.
 - Strip binary of symbols
 - Disassemble the executable
 - View binary code in executable
+- Some builtin features are available
+  - logger.h: error(FILE stream, char *type, char *message), info(FILE stream, char *type, char *message)
+  - colors.h: colors for output
 
 
 ---

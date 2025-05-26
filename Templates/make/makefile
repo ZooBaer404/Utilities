@@ -7,9 +7,10 @@ STD = c89
 # TODO: Remember to prepend the file with 'build/'!!!
 ARGS =
 
-# TODO: The file written before should depend of the file after it!!!
-SOURCES = main.c test/*.c benchmark/*.c
-INCLUDE = -Iinclude
+# TODO: The file written before should depend on the file after it!!!
+SOURCES = src/*.c
+INCLUDE = -Iinclude -Iinclude/builtin
+BUILTIN_SOURCES = test/*.c benchmark/*.c include/builtin/*.c
 EDITOR = vi
 LIB =
 DLL =
@@ -24,6 +25,7 @@ MASSIF_FLAGS = --tool=massif --time-unit=B
 CALLGRIND_FLAGS = --tool=callgrind
 HELGRIND_FLAGS = --tool=helgrind
 DRD_FLAGS = --tool=drd
+
 
 
 # compilation-related
@@ -206,7 +208,11 @@ else
 	@echo "Operation aborted!!"
 endif
 
-install:
+install: compile_release
+
+
+test: compile_release
+
 
 clean:
 	@echo "Cleaning obj directory..."
