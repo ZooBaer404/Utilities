@@ -1,7 +1,7 @@
+#include<stdio.h>
+
 #include "logger.h"
 #include "colors.h"
-
-#include<stdio.h>
 
 void error(FILE *stream, char *type, char *message) {
     if (type == NULL || message == NULL) {
