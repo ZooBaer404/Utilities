@@ -12,7 +12,7 @@ Location: docs/qa/README.md
 
 # Quality Assurance (QA) Documentation 🛠️🐛
 
-Welcome to the sacred realm of QA—where we ensure your shiny new features don't turn into flaming dumpster fires after deployment.  
+Welcome to the sacred realm of QA—where we ensure your shiny new features don't turn into flaming dumpster fires after deployment.
 
 This folder contains everything you need to keep quality in check and bugs at bay.
 
@@ -20,37 +20,41 @@ This folder contains everything you need to keep quality in check and bugs at ba
 
 ## QA Documentation Checklist ✅
 
-- [ ] **Test Plan** (`test-plan.md`)  
-  _Purpose:_ Outline the testing strategy, scope, objectives, resources, and schedule.  
+- [ ] **Test Plan** (`test-plan.md`)
+  _Purpose:_ Outline the testing strategy, scope, objectives, resources, and schedule.
   _Update frequency:_ Before any major testing phase or release.
 
-- [ ] **Test Cases** (`test-cases.md`)  
-  _Purpose:_ Detailed steps to verify features work as intended (and break when they shouldn’t).  
+- [ ] **Test Cases** (`test-cases.md`)
+  _Purpose:_ Detailed steps to verify features work as intended (and break when they shouldn’t).
   _Update frequency:_ Whenever features are added or changed.
 
-- [ ] **Bug Tracking** (`bug-tracking.md`)  
-  _Purpose:_ Track, prioritize, and manage those pesky bugs nobody likes to talk about.  
-  _Update frequency:_ Continuously; update with every bug found or resolved.
+- [ ] **Manual Tests** (`Github's Bug Tracker`)
+  _Purpose:_ It defines test inputs, expected outputs, results, and observations.
+  _Update frequency:_ Update whenever new features are tested manually or existing cases are re-tested.
 
-- [ ] **Test Automation** (`test-automation.md`)  
-  _Purpose:_ Document automated tests, frameworks, and CI/CD integration.  
+- [ ] **Test Automation** (`test-automation.md`)
+  _Purpose:_ Document automated tests, frameworks, and CI/CD integration.
   _Update frequency:_ Whenever automation scripts are added or changed.
 
-- [ ] **QA Metrics** (`qa-metrics.md`)  
-  _Purpose:_ Metrics and KPIs to measure the health of your software quality.  
+- [ ] **QA Metrics** (`qa-metrics.md`)
+  _Purpose:_ Metrics and KPIs to measure the health of your software quality.
   _Update frequency:_ Monthly or after major releases.
 
-- [ ] **Process Review** (`process-review.md`)  
-  _Purpose:_ Evaluate QA processes to find what works and what’s just smoke and mirrors.  
+- [ ] **Process Review** (`process-review.md`)
+  _Purpose:_ Evaluate QA processes to find what works and what’s just smoke and mirrors.
   _Update frequency:_ After every major sprint or release.
+
+- [ ] **Bug Tracking** (`Visit platform's bug tracker`)
+  _Purpose:_ Track, prioritize, and manage those pesky bugs nobody likes to talk about.
+  _Update frequency:_ Continuously; update with every bug found or resolved.
 
 ---
 
 ## Pro Tips for QA Masters 🎯
 
-- Automate what you can, but don’t blindly trust your robots — humans still catch the weird stuff.  
-- Document flaky tests like a detective logging weird clues.  
-- Use bug reports to *actually* improve the process, not just to argue about whose fault it was.  
+- Automate what you can, but don’t blindly trust your robots — humans still catch the weird stuff.
+- Document flaky tests like a detective logging weird clues.
+- Use bug reports to *actually* improve the process, not just to argue about whose fault it was.
 - Celebrate when your test coverage reaches 80% — anything less and you’re basically playing bug roulette.
 
 ---

@@ -31,31 +31,38 @@ Welcome to the Feature Docs hub! This directory contains detailed specifications
 
 ## Guidelines
 
-- Keep it clear and concise — developers and stakeholders should understand without needing a decoder ring.  
-- Use consistent formatting (headings, tables, bullet points).  
-- Link to relevant tickets, design docs, or external references.  
+- Keep it clear and concise — developers and stakeholders should understand without needing a decoder ring.
+- Use consistent formatting (headings, tables, bullet points).
+- Link to relevant tickets, design docs, or external references.
 - Update status regularly: Planned, In Progress, Review, Completed, or Deprecated.
 
 ---
 
 ## How to Contribute
 
-1. Create a new file following the naming convention.  
-2. Follow the template provided in `feature-template.md` (if available).  
-3. Submit a PR with your updates and mention the related issue or task.  
+1. Create a new file following the naming convention.
+2. Follow the template provided in `feature-template.md` (if available).
+3. Submit a PR with your updates and mention the related issue or task.
 4. Add yourself or relevant team members as reviewers.
 
 ---
 
 ## Useful Tips
 
-- Break complex features into smaller, manageable sub-features or modules.  
-- Keep user stories focused on value and behavior, not implementation details.  
+- Break complex features into smaller, manageable sub-features or modules.
+- Keep user stories focused on value and behavior, not implementation details.
 - Use this folder as a living source of truth throughout the project lifecycle.
 
 ---
 
 *Remember: great features start with great docs. Don’t be lazy—document like a boss.*
+
+---
+
+1. [ ] **Feature Name** ([feature.md](feature.md))
+   _Description:_ Short description of the feature
+   _Version:_ v0.0.1
+
 
 ---
 
