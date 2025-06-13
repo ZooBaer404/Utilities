@@ -19,7 +19,7 @@ EXE = build/main.out
 COMPILE = -std=$(STD) $(LIB) $(DLL) $(INCLUDE) -o $(EXE) $(SOURCES) $(BUILTIN_SOURCES) $(INCLUDE)
 
 # Valgrind
-VALGRIND_COMMON_FLAGS = -s --track-origins=yes --vgdb=yes --verbose
+VALGRIND_COMMON_FLAGS = -s --track-origins=yes --vgdb=yes leak-check=full --verbose
 MEMCHECK_FLAGS = --leak-check=full --show-leak-kinds=all
 MASSIF_FLAGS = --tool=massif --time-unit=B
 CALLGRIND_FLAGS = --tool=callgrind
